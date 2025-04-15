@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { axiosCaller } from "../../axios/axiosCaller";
+import { axiosCaller } from "../../axios/AxiosCaller";
 import { callMethods } from "../../constants/CommonConstants";
 import NoData from "../../404 Page/NoData";
 
@@ -39,7 +39,7 @@ const ImageCaptionUi = () => {
       if (response?.data?.photos?.length > 0) {
         setImages(response.data.photos);
         setIsLoading(false);
-        setError(""); 
+        setError("");
       } else {
         setImages([]);
         setIsLoading(false);
@@ -76,13 +76,21 @@ const ImageCaptionUi = () => {
   return (
     <div className="container">
       <div className="user-info">
-        <p><strong>Name:</strong> Shubham Singh</p>
-        <p><strong>Email:</strong> 0shubhamit@gmail.com</p>
+        <p>
+          <strong>Name:</strong> Shubham Singh
+        </p>
+        <p>
+          <strong>Email:</strong> 0shubhamit@gmail.com
+        </p>
       </div>
 
       <div className="caption-main">Image Caption UI</div>
 
-      <form onSubmit={handleSearch} className="search-form" style={{ position: 'relative' }}>
+      <form
+        onSubmit={handleSearch}
+        className="search-form"
+        style={{ position: "relative" }}
+      >
         <input
           type="text"
           placeholder="Search Images..."
@@ -115,13 +123,16 @@ const ImageCaptionUi = () => {
           {images.map((data, index) => (
             <div key={data?.id} className="image-card">
               <img src={data?.src?.medium} alt={`img-${index}`} />
-              <button onClick={() => handleAddCaption(data?.src?.medium)}>Add Caption</button>
+              <button onClick={() => handleAddCaption(data?.src?.medium)}>
+                Add Caption
+              </button>
             </div>
           ))}
-
         </div>
       ) : (
-        <div><NoData isLoading={isLoading}/></div>
+        <div>
+          <NoData isLoading={isLoading} />
+        </div>
       )}
     </div>
   );
