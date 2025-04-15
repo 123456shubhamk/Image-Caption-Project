@@ -1,0 +1,64 @@
+.add-caption-container {
+  display: flex;
+  padding: 50px;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.canvas-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#canvas {
+  border: 1px solid #000;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 300px;
+}
+
+.controls input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.controls button {
+  padding: 10px;
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.controls button:hover {
+  background-color: #005bb5; 
+}
+
+.controls .shape-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.controls .shape-buttons button {
+  padding: 8px;
+  background-color: #800080;
+}
+
+.controls .shape-buttons button:hover {
+  background-color: #800080;
+}
+
+
